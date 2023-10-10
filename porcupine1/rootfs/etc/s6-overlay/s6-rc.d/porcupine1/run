@@ -12,4 +12,4 @@ fi
 exec python3 /usr/src/server.py \
     --uri 'tcp://0.0.0.0:10400' \
     --sensitivity "$(bashio::config 'sensitivity')" \
-    --access_key "$(bashio::config 'access_key')" ${flags[@]}
+    --accesskey "$(bashio::config 'accesskey')" ${flags[@]}

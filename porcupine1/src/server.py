@@ -40,7 +40,7 @@ class State:
         self.keywords = keywords
 
     def get_porcupine(
-        self, keyword_name: str, sensitivity: float, access_key: str | None
+        self, keyword_name: str, sensitivity: float, access_key: str
     ) -> pvporcupine.Porcupine:
         keyword = self.keywords.get(keyword_name)
         if keyword is None:
@@ -51,7 +51,7 @@ class State:
             model_path=str(self.pv_lib_paths[keyword.language]),
             keyword_paths=[str(keyword.model_path)],
             sensitivities=[sensitivity],
-            access_key=access_key
+            access_key=str(access_key)
         )
 
 
@@ -64,7 +64,7 @@ async def main() -> None:
     )
     parser.add_argument("--system", help="linux or raspberry-pi")
     parser.add_argument("--sensitivity", type=float, default=0.5)
-    parser.add_argument("--access_key", type=str, default="")
+    parser.add_argument("--accesskey", type=str, default="")
     #
     parser.add_argument("--debug", action="store_true", help="Log DEBUG messages")
     args = parser.parse_args()
@@ -227,7 +227,7 @@ class Porcupine1EventHandler(AsyncEventHandler):
 
     def _load_keyword(self, keyword_name: str):
         self.porcupine = self.state.get_porcupine(
-            keyword_name, self.cli_args.sensitivity, self.cli_args.access_key
+            keyword_name, self.cli_args.sensitivity, self.cli_args.accesskey
         )
         self.keyword_name = keyword_name
         self.chunk_format = "h" * self.porcupine.frame_length

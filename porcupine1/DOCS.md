@@ -29,7 +29,7 @@ Activation threshold (0-1), where higher means fewer activations.
 
 ## Configuration
 
-### Option: `access_key`
+### Option: `accesskey`
 
 Todo
 

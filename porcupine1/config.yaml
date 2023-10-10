@@ -1,5 +1,5 @@
 ---
-version: 1.0.3
+version: 1.0.4
 slug: porcupine1
 name: porcupine1 (piitaya)
 description: porcupine1 using the Wyoming protocol
@@ -14,11 +14,11 @@ discovery:
 options:
   sensitivity: 0.5
   debug_logging: false
-  access_key: ""
+  accesskey: ""
 schema:
   sensitivity: float
   debug_logging: bool
-  access_key: str
+  accesskey: str
 ports:
   "10400/tcp": null
 homeassistant: 2023.9.0
