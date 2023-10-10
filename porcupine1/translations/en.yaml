@@ -4,6 +4,10 @@ configuration:
     name: Sensitivity
     description: >-
       Activation threshold (0-1), where higher means fewer activations.
+  access_key:
+    name: Access Key
+    description: >-
+      Picovoice access key
   debug_logging:
     name: Debug logging
     description: >-
