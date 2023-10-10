@@ -47,11 +47,17 @@ class State:
             raise ValueError(f"No keyword {keyword_name}")
 
         _LOGGER.debug("Loading %s for %s", keyword.name, keyword.language)
+
+        _LOGGER.debug(access_key)
+        _LOGGER.debug(str(keyword.model_path))
+        _LOGGER.debug(str(self.pv_lib_paths[keyword.language]))
+        _LOGGER.debug(sensitivity)
+
         return pvporcupine.create(
-            model_path=str(self.pv_lib_paths[keyword.language]),
+            access_key=access_key,
             keyword_paths=[str(keyword.model_path)],
-            sensitivities=[sensitivity],
-            access_key=str(access_key)
+            model_path=str(self.pv_lib_paths[keyword.language]),
+            sensitivities=[float(sensitivity)],
         )
 
 
