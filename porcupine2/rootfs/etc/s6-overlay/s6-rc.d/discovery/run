@@ -5,7 +5,7 @@
 # ==============================================================================
 declare config
 
-# Wait for porcupine1 to become available
+# Wait for Porcupine 2 to become available
 bash -c \
     "until
         echo '{ \"type\": \"describe\" }' 

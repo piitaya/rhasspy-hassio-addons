@@ -1,8 +1,8 @@
-# Home Assistant Add-on: porcupine1
+# Home Assistant Add-on: Porcupine 2
 
 ![Supports aarch64 Architecture][aarch64-shield] ![Supports amd64 Architecture][amd64-shield] ![Supports armv7 Architecture][armv7-shield]
 
-Home Assistant add-on that uses [porcupine1](https://github.com/Picovoice/porcupine) for wake word detection.
+Home Assistant add-on that uses [Porcupine 2](https://github.com/Picovoice/porcupine) for wake word detection.
 
 Part of the [Year of Voice](https://www.home-assistant.io/blog/2022/12/20/year-of-voice/).
 

@@ -1,4 +1,4 @@
-# Home Assistant Add-on: porcupine1
+# Home Assistant Add-on: Porcupine 2
 
 ## Installation
 
@@ -6,7 +6,7 @@ Follow these steps to get the add-on installed on your system:
 
 1. Navigate in your Home Assistant frontend to **Settings** -> **Add-ons** -> **Add-on store**.
 2. Add the store https://github.com/rhasspy/hassio-addons
-3. Find the "porcupine1" add-on and click it.
+3. Find the "Porcupine 2" add-on and click it.
 4. Click on the "INSTALL" button.
 
 ## How to use

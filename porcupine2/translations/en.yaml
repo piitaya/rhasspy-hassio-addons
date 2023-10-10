@@ -6,11 +6,11 @@ configuration:
       Activation threshold (0-1), where higher means fewer activations.
   access_key:
     name: Access Key
-    description: >-
+    description: >-git 
       Picovoice access key
   debug_logging:
     name: Debug logging
     description: >-
       Enable debug logging. Useful for seeing each wake word detection in the logs.
 network:
-  10400/tcp: porcupine1 Wyoming Protocol
+  10400/tcp: Porcupine 2 Wyoming Protocol
