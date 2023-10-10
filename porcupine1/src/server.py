@@ -54,7 +54,7 @@ class State:
         _LOGGER.debug(sensitivity)
 
         return pvporcupine.create(
-            # access_key=access_key,
+            access_key=access_key,
             keyword_paths=[str(keyword.model_path)],
             model_path=str(self.pv_lib_paths[keyword.language]),
             sensitivities=[float(sensitivity)],
