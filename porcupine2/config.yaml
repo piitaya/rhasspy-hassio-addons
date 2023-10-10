@@ -1,0 +1,24 @@
+---
+version: 1.0.0
+slug: porcupine2
+name: Porcupine 2
+description: Porcupine 2 using the Wyoming protocol
+url: https://github.com/piitaya/rhasspy-hassio-addons/tree/master/porcupine2
+arch:
+  - amd64
+  - aarch64
+  - armv7
+init: false
+discovery:
+  - wyoming
+options:
+  sensitivity: 0.5
+  debug_logging: false
+  access_key: ""
+schema:
+  sensitivity: float
+  debug_logging: bool
+  access_key: str
+ports:
+  "10400/tcp": null
+homeassistant: 2023.9.0
