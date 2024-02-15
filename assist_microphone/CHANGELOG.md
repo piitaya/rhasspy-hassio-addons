@@ -1,5 +1,17 @@
 # Changelog
 
+## 2.2.3
+
+- Add `host` config option
+
+## 2.2.2
+
+- Use supervisor API to get HA IP address
+
+## 2.2.1
+
+- Use supervisor API to get HA port and protocol (http/https)
+
 ## 2.2.0
 
 - Upgrade to `homeassistant-satellite` v2.2.0

@@ -4,9 +4,10 @@ FROM ${BUILD_FROM}
 # Set shell
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
-# Install porcupine1
+# Install wyoming-vosk
 WORKDIR /usr/src
-ENV WYOMING_PORCUPINE1_VERSION=1.1.0
+ARG WYOMING_VOSK_VERSION
+ENV PIP_BREAK_SYSTEM_PACKAGES=1
 
 RUN \
     apt-get update \
@@ -14,16 +15,14 @@ RUN \
         netcat-traditional \
         python3 \
         python3-pip \
-        python3-venv \
-    \
-    && python3 -m venv .venv \
-    && .venv/bin/pip3 install --no-cache-dir -U \
+        libatomic1 \
+    && pip3 install --no-cache-dir -U \
         setuptools \
         wheel \
-    && .venv/bin/pip3 install --no-cache-dir \
+    && pip3 install --no-cache-dir \
         --extra-index-url https://www.piwheels.org/simple \
-        "wyoming-porcupine1 @ https://github.com/rhasspy/wyoming-porcupine1/archive/refs/tags/v${WYOMING_PORCUPINE1_VERSION}.tar.gz" \
-    \
+        -f . \
+        "wyoming-vosk[limited] @ https://github.com/rhasspy/wyoming-vosk/archive/refs/tags/v${WYOMING_VOSK_VERSION}.tar.gz" \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /
@@ -31,6 +30,6 @@ COPY rootfs /
 
 HEALTHCHECK --start-period=10m \
     CMD echo '{ "type": "describe" }' \
-        | nc -w 1 localhost 10400 \
-        | grep -iq "porcupine1" \
+        | nc -w 1 localhost 10300 \
+        | grep -iq "vosk" \
         || exit 1

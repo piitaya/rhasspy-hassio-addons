@@ -1,9 +1,9 @@
 ---
 version: 1.1.0
-slug: porcupine1
-name: porcupine1
-description: porcupine1 using the Wyoming protocol
-url: https://github.com/rhasspy/hassio-addons/tree/master/porcupine1
+slug: snowboy
+name: snowboy
+description: snowboy wake word detection using the Wyoming protocol
+url: https://github.com/rhasspy/hassio-addons/tree/master/snowboy
 arch:
   - amd64
   - aarch64
@@ -11,6 +11,8 @@ arch:
 init: false
 discovery:
   - wyoming
+map:
+  - share:rw
 options:
   sensitivity: 0.5
   debug_logging: false

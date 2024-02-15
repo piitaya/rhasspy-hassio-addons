@@ -1,0 +1,31 @@
+---
+version: 1.5.1
+slug: vosk
+name: vosk
+description: vosk using the Wyoming protocol
+url: https://github.com/rhasspy/hassio-addons/tree/master/vosk
+arch:
+  - amd64
+  - aarch64
+  - armv7
+init: false
+discovery:
+  - wyoming
+map:
+  - share:rw
+options:
+  correct_sentences: 0.0
+  limit_sentences: false
+  preload_language: en
+  allow_unknown: false
+  debug_logging: false
+schema:
+  correct_sentences: float
+  limit_sentences: bool
+  preload_language: |
+    list(br|ca|cs|de|en|eo|es|fa|fr|hi|it|ja|ko|kz|nl|pl|pt|ru|sv|tl|tr|uz|vi|zh)
+  allow_unknown: bool
+  debug_logging: bool
+ports:
+  "10300/tcp": null
+homeassistant: 2023.9.0
